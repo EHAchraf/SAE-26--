@@ -1,0 +1,1233 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+    --ink: #173b35;
+    --deep: #082f2b;
+    --paper: #fbfaf5;
+    --sand: #f2eee2;
+    --coral: #ee735b;
+    --muted: #718984;
+    --line: rgba(23, 59, 53, .14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "DM Sans", sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+em {
+    color: var(--coral);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.menu-toggle {
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.site-header {
+    height: 78px;
+    padding: 0 clamp(24px, 5vw, 76px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    background: rgba(251, 250, 245, .96);
+    backdrop-filter: blur(14px);
+    position: fixed;
+    z-index: 100;
+    inset: 0 0 auto;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font: 25px "DM Serif Display";
+    letter-spacing: -.8px;
+}
+
+.logo b {
+    color: var(--coral);
+}
+
+.logo-mark {
+    width: 31px;
+    height: 31px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: white;
+    font: 13px "DM Sans";
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 13px;
+}
+
+.site-header nav a:hover {
+    color: var(--coral);
+}
+
+.nav-separator {
+    height: 25px;
+    width: 1px;
+    background: var(--line);
+    margin-left: 10px;
+}
+
+.menu-button {
+    display: none;
+    width: 38px;
+    height: 38px;
+    padding: 9px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+}
+
+.menu-button span {
+    height: 1px;
+    background: var(--ink);
+    width: 100%;
+}
+
+main {
+    padding-top: 78px;
+}
+
+.screen {
+    display: flex;
+    min-height: calc(100vh - 78px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.screen:target {
+    display: block;
+}
+
+body:not(:has(.screen:target)) #accueil {
+    display: block;
+}
+
+.button {
+    min-height: 48px;
+    padding: 0 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border: 0;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+}
+
+.button.small {
+    min-height: 40px;
+    background: var(--ink);
+    color: white;
+    padding: 0 17px;
+}
+
+.button.coral {
+    background: var(--coral);
+    color: white;
+}
+
+.button.glass {
+    border: 1px solid rgba(255, 255, 255, .4);
+    background: rgba(8, 47, 43, .28);
+    color: white;
+}
+
+.button.sand {
+    background: var(--sand);
+}
+
+.button.dark {
+    background: var(--ink);
+    color: white;
+    width: 100%;
+}
+
+.button.outline {
+    border: 1px solid var(--line);
+}
+
+.eyebrow {
+    display: inline-block;
+    color: #4a776e;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.eyebrow.pale {
+    color: #afd1c5;
+}
+
+.hero {
+    height: calc(100vh - 78px);
+    min-height: 650px;
+    max-height: 830px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    background: linear-gradient(90deg, rgba(4, 34, 31, .95), rgba(4, 34, 31, .46) 55%, rgba(4, 34, 31, .08)), url("/src/assets/nakoa-world.png") center/cover;
+}
+
+.hero-content {
+    width: min(720px, 75%);
+    padding-left: clamp(30px, 7.7vw, 118px);
+    margin-top: -45px;
+}
+
+.hero h1,
+.catalog-title h1,
+.auth-form h1,
+.logout-screen h1 {
+    margin-top: 22px;
+    font: clamp(50px, 5.5vw, 84px)/.98 "DM Serif Display";
+    letter-spacing: -2.5px;
+}
+
+.hero-content>p {
+    max-width: 520px;
+    margin: 27px 0 30px;
+    color: rgba(255, 255, 255, .7);
+    line-height: 1.7;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+}
+
+.hero-stats {
+    position: absolute;
+    right: clamp(25px, 5vw, 78px);
+    bottom: 42px;
+    display: flex;
+    gap: 42px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font: 25px "DM Serif Display";
+}
+
+.hero-stats span {
+    margin-top: 4px;
+    color: rgba(255, 255, 255, .55);
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.section {
+    padding: 105px clamp(30px, 7.7vw, 118px);
+}
+
+.section-heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 52px;
+}
+
+.section-heading h2,
+.manifesto h2 {
+    margin-top: 16px;
+    font: clamp(42px, 4.2vw, 64px)/1.02 "DM Serif Display";
+    letter-spacing: -1.6px;
+}
+
+.heading-note {
+    width: 350px;
+}
+
+.heading-note p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+}
+
+.text-link {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--ink);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.game-art {
+    aspect-ratio: 1.32;
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+
+.game-art.photo {
+    background-image: url("/src/assets/nakoa-world.png");
+}
+
+.game-art.sun {
+    background: radial-gradient(circle at 72% 30%, #ffd37b 0 8%, transparent 9%), linear-gradient(145deg, #a9d8bc 0 36%, #e6a05d 37% 53%, #8f493f 54%);
+}
+
+.game-art.valley {
+    background: linear-gradient(145deg, #8fbdb0, #20564d 50%, #102d2b);
+}
+
+.game-art.coral-art {
+    background: radial-gradient(circle at 50% 35%, #f4d499, transparent 22%), linear-gradient(150deg, #65b9ad, #0a4a52);
+}
+
+.game-art.night {
+    background: radial-gradient(circle at 70% 25%, #e5d7a5 0 10%, transparent 11%), linear-gradient(145deg, #383761, #102d42 65%, #071d28);
+}
+
+.game-art.canopy {
+    background: radial-gradient(circle at 60% 60%, #e7c578 0 8%, transparent 9%), linear-gradient(135deg, #79a96e, #164e40 57%, #082d2b);
+}
+
+.game-art:after {
+    content: "";
+    position: absolute;
+    inset: 50% 0 0;
+    background: linear-gradient(transparent, rgba(3, 30, 27, .55));
+}
+
+.tag {
+    position: absolute;
+    z-index: 2;
+    top: 15px;
+    left: 15px;
+    padding: 7px 10px;
+    background: rgba(7, 45, 40, .55);
+    color: white;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.heart {
+    position: absolute;
+    z-index: 2;
+    right: 15px;
+    top: 15px;
+    color: white;
+    font-size: 23px;
+}
+
+.round-arrow {
+    position: absolute;
+    z-index: 3;
+    right: 17px;
+    bottom: 17px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: white;
+    color: var(--ink);
+    font-size: 22px;
+    transform: rotate(-12deg);
+}
+
+.game-info {
+    padding-top: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.game-info h3 {
+    font: 21px "DM Serif Display";
+}
+
+.game-info p {
+    margin-top: 7px;
+    color: #78908b;
+    font-size: 10px;
+}
+
+.game-info>strong {
+    color: var(--coral);
+    font-size: 11px;
+}
+
+.manifesto {
+    padding: 110px clamp(30px, 7.7vw, 118px);
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 9vw;
+    background: var(--deep);
+    color: white;
+}
+
+.manifesto>div:first-child>p {
+    max-width: 480px;
+    margin: 25px 0 30px;
+    color: #94b5ae;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-left: 1px solid rgba(255, 255, 255, .13);
+}
+
+.values article {
+    min-height: 300px;
+    padding: 15px 25px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid rgba(255, 255, 255, .13);
+}
+
+.values small {
+    color: #76978f;
+}
+
+.values b {
+    margin: auto 0 20px;
+    color: var(--coral);
+    font-size: 23px;
+}
+
+.values h3 {
+    font: 19px "DM Serif Display";
+    margin-bottom: 9px;
+}
+
+.values p {
+    color: #789a94;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+footer {
+    padding: 65px clamp(30px, 7.7vw, 118px) 24px;
+    background: #062824;
+    color: white;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr .7fr .7fr 1.4fr;
+    gap: 45px;
+    padding-bottom: 55px;
+}
+
+.footer-grid>div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+}
+
+.footer-logo .logo-mark {
+    background: var(--sand);
+    color: var(--ink);
+}
+
+.footer-grid>div:first-child p {
+    margin-top: 12px;
+    color: #77958f;
+    font: 19px/1.4 "DM Serif Display";
+}
+
+.footer-grid strong {
+    margin-bottom: 5px;
+    color: #b9cbc7;
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+.footer-grid a,
+.footer-grid p {
+    color: #6f918a;
+    font-size: 11px;
+}
+
+.newsletter label {
+    width: 100%;
+    display: flex;
+    border-bottom: 1px solid #40625b;
+}
+
+.newsletter input {
+    flex: 1;
+    padding: 12px 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: white;
+}
+
+.newsletter label span {
+    color: var(--coral);
+}
+
+.footer-bottom {
+    padding-top: 22px;
+    border-top: 1px solid rgba(255, 255, 255, .09);
+    display: flex;
+    justify-content: space-between;
+    color: #4f746c;
+    font-size: 8px;
+}
+
+.catalog-head {
+    padding: 78px clamp(30px, 7.7vw, 118px);
+}
+
+.catalog-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin: 17px 0 48px;
+}
+
+.catalog-title h1 {
+    font-size: clamp(48px, 5vw, 74px);
+}
+
+.catalog-title p {
+    width: 410px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.search-box {
+    height: 70px;
+    border-block: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.search-box input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+.search-box small {
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.catalog>input {
+    position: absolute;
+    opacity: 0;
+}
+
+.filters {
+    display: flex;
+    gap: 9px;
+    padding: 25px 0 45px;
+}
+
+.filters label {
+    padding: 9px 15px;
+    border: 1px solid var(--line);
+    color: #63807a;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+#all:checked~.filters label[for=all],
+#adventure:checked~.filters label[for=adventure],
+#strategy:checked~.filters label[for=strategy],
+#arcade:checked~.filters label[for=arcade] {
+    background: var(--ink);
+    color: white;
+}
+
+.catalog-grid {
+    row-gap: 55px;
+}
+
+#adventure:checked~.catalog-grid .game-card:not(.adventure),
+#strategy:checked~.catalog-grid .game-card:not(.strategy),
+#arcade:checked~.catalog-grid .game-card:not(.arcade) {
+    display: none;
+}
+
+.auth-screen:target {
+    display: grid;
+    grid-template-columns: minmax(390px, 44%) 1fr;
+}
+
+.auth-image {
+    min-height: calc(100vh - 78px);
+    padding: 55px;
+    display: flex;
+    align-items: end;
+    color: white;
+    background: linear-gradient(0deg, rgba(3, 35, 31, .9), rgba(5, 39, 35, .08) 70%), url("/src/assets/nakoa-world.png") center/cover;
+}
+
+.auth-image blockquote {
+    margin: 15px 0;
+    font: clamp(34px, 3vw, 48px)/1.08 "DM Serif Display";
+}
+
+.auth-image>div>span {
+    color: var(--coral);
+}
+
+.auth-image p {
+    color: rgba(255, 255, 255, .65);
+    font-size: 12px;
+}
+
+.register-image {
+    background-position: 65% center;
+}
+
+.auth-panel {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: 55px;
+}
+
+.close {
+    position: absolute;
+    right: 38px;
+    top: 30px;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+}
+
+.auth-form {
+    width: min(440px, 100%);
+}
+
+.auth-form h1 {
+    margin: 18px 0;
+    font-size: clamp(42px, 4vw, 62px);
+}
+
+.auth-form>p {
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.auth-form form>label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+.field {
+    height: 49px;
+    margin-top: 8px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border: 1px solid var(--line);
+    background: white;
+}
+
+.field i {
+    color: #91a39f;
+    font-style: normal;
+}
+
+.field input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 8px !important;
+    color: var(--muted);
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+}
+
+.check input {
+    accent-color: var(--ink);
+}
+
+.terms {
+    line-height: 1.5;
+}
+
+.switch {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.switch a {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.profile-cover {
+    height: 205px;
+    background: linear-gradient(90deg, rgba(6, 45, 40, .7), transparent), url("/src/assets/nakoa-world.png") center 48%/cover;
+}
+
+.profile-summary {
+    padding: 0 clamp(30px, 7.7vw, 118px);
+    min-height: 145px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    border-bottom: 1px solid var(--line);
+}
+
+.avatar {
+    width: 92px;
+    height: 92px;
+    margin-top: -42px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    border: 5px solid var(--paper);
+    border-radius: 50%;
+    background: var(--coral);
+    color: white;
+    font: 24px "DM Serif Display";
+}
+
+.avatar span {
+    position: absolute;
+    right: 4px;
+    bottom: 10px;
+    width: 13px;
+    height: 13px;
+    border: 3px solid var(--paper);
+    border-radius: 50%;
+    background: #49a977;
+}
+
+.profile-summary small {
+    color: #4a776e;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.profile-summary h1 {
+    font: 34px "DM Serif Display";
+}
+
+.profile-summary p {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.profile-summary .button {
+    margin-left: auto;
+}
+
+.profile-layout {
+    padding: 70px clamp(30px, 7.7vw, 118px);
+    display: grid;
+    grid-template-columns: 1fr 290px;
+    gap: 70px;
+}
+
+.profile-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 25px;
+}
+
+.profile-title h2 {
+    margin-top: 10px;
+    font: 31px "DM Serif Display";
+}
+
+.continue-card {
+    min-height: 220px;
+    display: grid;
+    grid-template-columns: 47% 1fr;
+    border: 1px solid var(--line);
+    background: white;
+}
+
+.continue-image {
+    position: relative;
+    background: url("/src/assets/nakoa-world.png") center/cover;
+}
+
+.continue-card>div:last-child {
+    padding: 35px;
+}
+
+.continue-card small {
+    color: var(--coral);
+    font-size: 9px;
+    text-transform: uppercase;
+}
+
+.continue-card h3 {
+    margin: 11px 0 5px;
+    font: 27px "DM Serif Display";
+}
+
+.continue-card p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.progress {
+    display: block;
+    height: 3px;
+    margin: 34px 0 8px;
+    background: #e6e9e3;
+}
+
+.progress i {
+    display: block;
+    width: 64%;
+    height: 100%;
+    background: var(--coral);
+}
+
+.continue-card em {
+    font: 9px "DM Sans";
+    color: var(--muted);
+}
+
+.saved-title {
+    margin-top: 55px;
+}
+
+.saved-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.profile-layout aside {
+    padding-left: 35px;
+    border-left: 1px solid var(--line);
+}
+
+.profile-layout aside>h3 {
+    margin-bottom: 25px;
+    font: 23px "DM Serif Display";
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 1px solid var(--line);
+}
+
+.stats div {
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--line);
+}
+
+.stats div:nth-child(odd) {
+    border-right: 1px solid var(--line);
+}
+
+.stats div:nth-child(n+3) {
+    border-bottom: 0;
+}
+
+.stats strong {
+    font: 25px "DM Serif Display";
+}
+
+.stats span {
+    margin-top: auto;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.badge {
+    margin-top: 25px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #edf1e8;
+}
+
+.badge>b {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: white;
+}
+
+.badge small {
+    font-size: 7px;
+    letter-spacing: 1px;
+}
+
+.badge div strong {
+    display: block;
+    margin: 4px 0;
+    font: 16px "DM Serif Display";
+}
+
+.badge p {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.logout-link {
+    display: block;
+    margin-top: 30px;
+    color: #a15b4d;
+    font-size: 11px;
+}
+
+.logout-screen:target {
+    display: grid;
+    place-items: center;
+    padding: 50px 20px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 20%, #e4eee5, transparent 36%);
+}
+
+.logout-screen>div {
+    max-width: 530px;
+}
+
+.success {
+    width: 68px;
+    height: 68px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--ink);
+    color: white;
+    font-size: 28px;
+}
+
+.logout-screen h1 {
+    margin: 17px 0 22px;
+    font-size: clamp(46px, 5vw, 66px);
+}
+
+.logout-screen p {
+    margin: 0 auto 28px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.logout-screen .button {
+    width: 220px;
+    margin-bottom: 23px;
+}
+
+.back-home {
+    display: block;
+    width: max-content;
+    margin: auto;
+}
+
+@media (max-width: 900px) {
+    .site-header nav {
+        gap: 17px;
+    }
+
+    .manifesto {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-layout aside {
+        padding-left: 0;
+        border-left: 0;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        height: 68px;
+    }
+
+    .site-header nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 25px;
+        flex-direction: column;
+        align-items: stretch;
+        background: var(--paper);
+        box-shadow: 0 15px 30px rgba(10, 40, 35, .1);
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .menu-toggle:checked~.site-header nav {
+        display: flex;
+    }
+
+    .nav-separator {
+        display: none;
+    }
+
+    main {
+        padding-top: 68px;
+    }
+
+    .screen {
+        min-height: calc(100vh - 68px);
+    }
+
+    .hero {
+        height: 760px;
+        min-height: 0;
+        background: linear-gradient(0deg, rgba(4, 34, 31, .95), rgba(4, 34, 31, .15)), url("/src/assets/nakoa-world.png") center/cover;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 0 24px;
+        margin-top: 80px;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
+
+    .hero-stats {
+        left: 24px;
+        right: 24px;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .section {
+        padding: 75px 24px;
+    }
+
+    .section-heading,
+    .catalog-title {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .heading-note,
+    .catalog-title p {
+        width: auto;
+    }
+
+    .games-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .manifesto {
+        padding: 75px 24px;
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+        border-left: 0;
+    }
+
+    .values article {
+        min-height: 180px;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .13);
+    }
+
+    .values b {
+        margin: 30px 0 15px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-grid>div:first-child,
+    .newsletter {
+        grid-column: 1/-1;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .catalog-head {
+        padding: 60px 24px;
+    }
+
+    .catalog-title h1 {
+        font-size: 48px;
+    }
+
+    .filters {
+        overflow: auto;
+    }
+
+    .auth-screen:target {
+        grid-template-columns: 1fr;
+    }
+
+    .auth-image {
+        display: none;
+    }
+
+    .auth-panel {
+        padding: 85px 24px 45px;
+    }
+
+    .profile-cover {
+        height: 155px;
+    }
+
+    .profile-summary {
+        padding: 0 24px 25px;
+        align-items: start;
+        flex-wrap: wrap;
+    }
+
+    .profile-summary>div:nth-child(2) {
+        padding-top: 18px;
+    }
+
+    .profile-summary .button {
+        width: 100%;
+        margin: 0;
+    }
+
+    .profile-layout {
+        padding: 55px 24px;
+    }
+
+    .continue-card {
+        grid-template-columns: 1fr;
+    }
+
+    .continue-image {
+        min-height: 210px;
+    }
+
+    .saved-grid {
+        grid-template-columns: 1fr;
+    }
+}
