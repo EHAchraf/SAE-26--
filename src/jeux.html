@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nakoa, une collection de jeux indépendants et de mondes hors du commun." />
+    <title>Nakoa — Explorez des mondes hors du commun</title>
+    <link rel="stylesheet" href="styles/style_bot.css" />
 </head>
 <body>
+<input class="menu-toggle" type="checkbox" id="menu-toggle" />
+<header class="site-header">
+    <a class="logo" href="accueil.html" aria-label="Accueil Nakoa">
+        <span class="logo-mark">N</span><span>nakoa<b>.</b></span>
+    </a>
+    <label class="menu-button" for="menu-toggle"><span></span><span></span><span></span></label>
+    <nav>
+        <a href="accueil.html">Accueil</a>
+        <a href="jeux.html">Les jeux</a>
+        <a href="profile.html">Mon profil</a>
+        <span class="nav-separator"></span>
+        <a href="login.html">Se connecter</a>
+        <a class="button small" href="register.html">Créer un compte <span>→</span></a>
+    </nav>
+</header>
+<!-- PAGE DES JEUX -->
+<section class="screen games-screen" id="jeux">
+    <div class="catalog-head">
+        <span class="eyebrow">◇ La collection</span>
+        <div class="catalog-title">
+            <h1>Des mondes à<br /><em>votre mesure.</em></h1>
+            <p>Parcourez notre sélection d’expériences indépendantes. Chaque jeu a été choisi pour son âme, son audace et son pouvoir d’évasion.</p>
+        </div>
+        <div class="search-box"><span>⌕</span><input type="search" placeholder="Rechercher un univers..." /><small>6 expériences</small></div>
+        <div class="catalog">
+            <input type="radio" name="filter" id="all" checked />
+            <input type="radio" name="filter" id="adventure" />
+            <input type="radio" name="filter" id="strategy" />
+            <input type="radio" name="filter" id="arcade" />
+            <div class="filters">
+                <label for="all">Tous</label><label for="adventure">Aventure</label><label for="strategy">Stratégie</label><label for="arcade">Arcade</label>
+            </div>
+            <div class="games-grid catalog-grid">
+                <article class="game-card adventure"><div class="game-art photo"><span class="tag">Aventure</span><a class="round-arrow" href="login.html">→</a></div><div class="game-info"><div><h3>Nom de jeux</h3></div></div></article>
+                <article class="game-card adventure"><div class="game-art sun"><span class="tag">Exploration</span><a class="round-arrow" href="login.html">→</a></div><div class="game-info"><div><h3>Nom de jeux</h3></div></div></article>
+                <article class="game-card strategy"><div class="game-art valley"><span class="tag">Stratégie</span><a class="round-arrow" href="login.html">→</a></div><div class="game-info"><div><h3>Nom de jeux</h3></div></div></article>
+                <article class="game-card adventure"><div class="game-art coral-art"><span class="tag">Coopération</span><a class="round-arrow" href="login.html">→</a></div><div class="game-info"><div><h3>Nom de jeux</h3></div></div></article>
+                <article class="game-card strategy"><div class="game-art night"><span class="tag">Réflexion</span><a class="round-arrow" href="login.html">→</a></div><div class="game-info"><div><h3>Nom de jeux</h3></div></div></article>
+                <article class="game-card arcade"><div class="game-art canopy"><span class="tag">Arcade</span><a class="round-arrow" href="login.html">→</a></div><div class="game-info"><div><h3>Nom de jeux</h3></div></div></article>
+            </div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>

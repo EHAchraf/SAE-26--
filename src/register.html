@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nakoa, une collection de jeux indépendants et de mondes hors du commun." />
+    <title>Nakoa — Explorez des mondes hors du commun</title>
+    <link rel="stylesheet" href="styles/style_bot.css" />
 </head>
 <body>
-
+<input class="menu-toggle" type="checkbox" id="menu-toggle" />
+<header class="site-header">
+    <a class="logo" href="accueil.html" aria-label="Accueil Nakoa">
+        <span class="logo-mark">N</span><span>nakoa<b>.</b></span>
+    </a>
+    <label class="menu-button" for="menu-toggle"><span></span><span></span><span></span></label>
+    <nav>
+        <a href="accueil.html">Accueil</a>
+        <a href="jeux.html">Les jeux</a>
+        <a href="profile.html">Mon profil</a>
+        <span class="nav-separator"></span>
+        <a href="login.html">Se connecter</a>
+        <a class="button small" href="register.html">Créer un compte <span>→</span></a>
+    </nav>
+</header>
+<!-- PAGE D'INSCRIPTION -->
+<section class="screen auth-screen" id="inscription">
+    <div class="auth-image register-image">
+        <div><span>✦</span><blockquote>« Chaque aventure<br />commence par un pas. »</blockquote><p>Créez votre passeport pour Nakoa.</p></div>
+    </div>
+    <div class="auth-panel">
+        <a class="close" href="accueil.html">×</a>
+        <div class="auth-form">
+            <span class="eyebrow">✦ Commencez l’aventure</span>
+            <h1>Créez votre<br /><em>passeport.</em></h1>
+            <p>Quelques détails et les portes de Nakoa s’ouvrent à vous.</p>
+            <form action="profile.html">
+                <label>Nom d’explorateur<span class="field"><i>○</i><input required type="text" placeholder="Votre nom" /></span></label>
+                <label>Adresse e-mail<span class="field"><i>@</i><input required type="email" placeholder="vous@exemple.fr" /></span></label>
+                <label>Mot de passe<span class="field"><i>◇</i><input required type="password" placeholder="8 caractères minimum" /></span></label>
+                <label class="check terms"><input required type="checkbox" /> J’accepte les conditions d’utilisation et la politique de confidentialité.</label>
+                <button class="button dark" type="submit">Créer mon compte <span>→</span></button>
+            </form>
+            <div class="switch">Déjà explorateur ? <a href="login.html">Se connecter</a></div>
+        </div>
+    </div>
+</section>
 </body>
 </html>

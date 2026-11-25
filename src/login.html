@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nakoa, une collection de jeux indépendants et de mondes hors du commun." />
+    <title>Nakoa — Explorez des mondes hors du commun</title>
+    <link rel="stylesheet" href="styles/style_bot.css" />
 </head>
 <body>
+<input class="menu-toggle" type="checkbox" id="menu-toggle" />
+<header class="site-header">
+    <a class="logo" href="accueil.html" aria-label="Accueil Nakoa">
+        <span class="logo-mark">N</span><span>nakoa<b>.</b></span>
+    </a>
+    <label class="menu-button" for="menu-toggle"><span></span><span></span><span></span></label>
+    <nav>
+        <a href="accueil.html">Accueil</a>
+        <a href="jeux.html">Les jeux</a>
+        <a href="profile.html">Mon profil</a>
+        <span class="nav-separator"></span>
+        <a href="login.html">Se connecter</a>
+        <a class="button small" href="register.html">Créer un compte <span>→</span></a>
+    </nav>
+</header>
+
+<!-- PAGE DE CONNEXION -->
+<section class="screen auth-screen" id="connexion">
+    <div class="auth-image">
+        <div><span>✦</span><blockquote>« Il reste toujours<br />un monde à découvrir. »</blockquote><p>Votre prochaine aventure vous attend.</p></div>
+    </div>
+    <div class="auth-panel">
+        <a class="close" href="accueil.html">×</a>
+        <div class="auth-form">
+            <span class="eyebrow">◇ Heureux de vous revoir</span>
+            <h1>Bon retour parmi<br /><em>les explorateurs.</em></h1>
+            <p>Connectez-vous pour reprendre votre voyage là où vous l’avez laissé.</p>
+            <form action="profile.html">
+                <label>Adresse e-mail<span class="field"><i>@</i><input required type="email" placeholder="vous@exemple.fr" /></span></label>
+                <label>Mot de passe<span class="field"><i>◇</i><input required type="password" placeholder="••••••••" /></span></label>
+                <div class="form-row"><label class="check"><input type="checkbox" /> Se souvenir de moi</label><a href="login.html">Mot de passe oublié ?</a></div>
+                <button class="button dark" type="submit">Se connecter <span>→</span></button>
+            </form>
+            <div class="switch">Nouveau sur notre plateforme ? <a href="register.html">Créer un compte</a></div>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>

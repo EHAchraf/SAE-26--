@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nakoa, une collection de jeux indépendants et de mondes hors du commun." />
+    <title>Nakoa — Explorez des mondes hors du commun</title>
+    <link rel="stylesheet" href="styles/style_bot.css" />
 </head>
 <body>
+<input class="menu-toggle" type="checkbox" id="menu-toggle" />
+<header class="site-header">
+    <a class="logo" href="accueil.html" aria-label="Accueil Nakoa">
+        <span class="logo-mark">N</span><span>nakoa<b>.</b></span>
+    </a>
+    <label class="menu-button" for="menu-toggle"><span></span><span></span><span></span></label>
+    <nav>
+        <a href="accueil.html">Accueil</a>
+        <a href="jeux.html">Les jeux</a>
+        <a href="profile.html">Mon profil</a>
+        <span class="nav-separator"></span>
+        <a href="login.html">Se connecter</a>
+        <a class="button small" href="register.html">Créer un compte <span>→</span></a>
+    </nav>
+</header>
 
+<section class="screen profile-screen" id="profil">
+    <div class="profile-cover"></div>
+    <div class="profile-summary">
+        <div class="avatar">NL<span></span></div>
+        <div><small>Exploratrice depuis 2024</small><h1>Nina Lemaire</h1><p>◇ Paris, France</p></div>
+        <a class="button outline" href="profile.html">Modifier le profil</a>
+    </div>
+    <div class="profile-layout">
+        <div>
+            <div class="profile-title"><div><span class="eyebrow">◷ Reprendre le voyage</span><h2>En cours d’exploration</h2></div><a class="text-link" href="#jeux">Tout voir →</a></div>
+            <article class="continue-card">
+                <div class="continue-image"><a class="round-arrow" href="login.html">→</a></div>
+                <div><small>Aventure · Chapitre 4</small><h3>Archipel d’Éther</h3><p>La cité suspendue</p><span class="progress"><i></i></span><em>64% terminé</em></div>
+            </article>
+            <div class="profile-title saved-title"><div><span class="eyebrow">♡ Votre collection</span><h2>Jeux sauvegardés</h2></div></div>
+            <div class="saved-grid">
+                <article class="game-card"><div class="game-art sun"><span class="tag">Exploration</span></div><div class="game-info"><div><h3>Solar Nomads</h3></div></div></article>
+                <article class="game-card"><div class="game-art valley"><span class="tag">Stratégie</span></div><div class="game-info"><div><h3>Monsoon Valley</h3></div></div></article>
+                <article class="game-card"><div class="game-art coral-art"><span class="tag">Coopération</span></div><div class="game-info"><div><h3>Coral Keepers</h3></div></div></article>
+            </div>
+        </div>
+        <aside>
+            <h3>Votre boussole</h3>
+            <div class="stats"><div><strong>12</strong><span>Jeux explorés</span></div><div><strong>86h</strong><span>En voyage</span></div><div><strong>7</strong><span>Badges gagnés</span></div><div><strong>4.8</strong><span>Note moyenne</span></div></div>
+            <div class="badge"><b>◇</b><div><small>DERNIER BADGE</small><strong>Âme sauvage</strong><p>3 aventures terminées</p></div></div>
+            <a class="logout-link" href="logout.html">→ Se déconnecter</a>
+        </aside>
+    </div>
+</section>
 </body>
 </html>

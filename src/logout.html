@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nakoa, une collection de jeux indépendants et de mondes hors du commun." />
+    <title>Nakoa — Explorez des mondes hors du commun</title>
+    <link rel="stylesheet" href="styles/style_bot.css" />
 </head>
 <body>
-
+<input class="menu-toggle" type="checkbox" id="menu-toggle" />
+<header class="site-header">
+    <a class="logo" href="accueil.html" aria-label="Accueil Nakoa">
+        <span class="logo-mark">N</span><span>nakoa<b>.</b></span>
+    </a>
+    <label class="menu-button" for="menu-toggle"><span></span><span></span><span></span></label>
+    <nav>
+        <a href="accueil.html">Accueil</a>
+        <a href="jeux.html">Les jeux</a>
+        <a href="profile.html">Mon profil</a>
+        <span class="nav-separator"></span>
+        <a href="login.html">Se connecter</a>
+        <a class="button small" href="register.html">Créer un compte <span>→</span></a>
+    </nav>
+</header>
+<!-- PAGE DE DÉCONNEXION -->
+<section class="screen logout-screen" >
+    <div>
+        <span class="success">✓</span>
+        <span class="eyebrow">À bientôt, exploratrice</span>
+        <h1>Votre voyage est<br /><em>en sécurité.</em></h1>
+        <p>Vous avez bien été déconnectée. Vos mondes sauvegardés seront là à votre retour.</p>
+        <a class="button dark" href="login.html">Se reconnecter <span>→</span></a>
+        <a class="text-link back-home" href="accueil.html">Retourner à l’accueil</a>
+    </div>
+</section>
 </body>
 </html>
