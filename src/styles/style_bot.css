@@ -324,6 +324,7 @@ body:not(:has(.screen:target)) #accueil {
 
 .game-art.photo {
     background-image: url("/src/assets/nakoa-world.png");
+
 }
 
 .game-art.sun {
@@ -628,6 +629,9 @@ footer {
     display: flex;
     align-items: end;
     color: white;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
     background: linear-gradient(0deg, rgba(3, 35, 31, .9), rgba(5, 39, 35, .08) 70%), url("/src/assets/nakoa-world.png") center/cover;
 }
 
